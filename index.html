@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Dieta gato">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#16202B">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<link rel="manifest" href="data:application/manifest+json,%7B%22name%22%3A%20%22Dieta%20del%20gato%22%2C%20%22short_name%22%3A%20%22Dieta%20gato%22%2C%20%22display%22%3A%20%22standalone%22%2C%20%22background_color%22%3A%20%22%2316202B%22%2C%20%22theme_color%22%3A%20%22%2316202B%22%2C%20%22icons%22%3A%20%5B%7B%22src%22%3A%20%22data%3Aimage/png%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAGgUlEQVR4Xu3dvZIbRRiFYZbiGnCKY1PcDzEJOVUQmJCUnISY%2B6FM7NhXYaoNUzs11mx3z/TP%2BU6/T8iqpNH0u59aI3l5%2BvqbNx%2B/AEx8afI8gE8IGlYIGlYIGlYIGlYIGlYIGlYIGlYIGlYIGlYIGlYIGlYIGlYIGlYIGlYIGlYIGlYIGlYIGlYIGlYIGlbCB/3h/TurBZkt%2BvkMH3QSfRFUOJzHr1RO5l3bYrx6/e3du1qOQ8ib0BP60UI4Lc4IbucwdNBniLqM43my2XIcsQU55xiyxZajhPPiXeF%2BPiy3HGfTenXuMSdPUf/66NXFWfEqyErnaokJvXd1caNa7fkuF3SyyiKv8jz3bK9y5DhfBVkx5GWucuS4Lb7b86kVcsvRetFa398srZ9H6/sbYdktx9mlvYhXQSKG10vICd1TtDiiHW9vBP1AlEiiHOdI4T5YGb2IilsQzsE59tAZKZ7SqO%2BENuIxVkDQBY5R3wn3zNl97kPv8bhuCLrQrJhmPW5UvCmElVBBM63miHTeQwUN5BA0rBA0rBA0rIQJOtIbE0dRzn%2BYoIESBA0rBA0rBA0rIYKO8obEXYR1CBE0UIqgYYWgYYWgYUU%2B6AhvRFaivh7yQQM1CBpWlvs3hR9%2Be1O8gK9%2B/af4ttAg/Xc5WuzXagLOIfBnpX92YTTbCd0y5M12n4Styy7oHiEfEbYum6BHhEzY%2BiyucsyIeW/24%2BOZ7JvCkjeEiiGttL9WfGMYdkIrxpyoHtcqQgatHo368TmTDPql7UaUWKIc5x0l28LRJIM%2BEy2SaMfrQC5oxd96nFNbL7mgXabzhik9llTQZ7/t0aOIfvw5SlNaKmjgLvmgXaaby/NQJxO00ssW6qmsn0zQj7hNNbfno0giaJXfbtyjsI4SQQOtEDSsTA/a9drzGfd99Oxth82/WGntuz%2BfPrvLv3/42Pphij367vHseBRNn9CKHsWcnP333s6%2BSK/4BfvZCPogF23u563los39fDVTg1Z7ySyNtfR2d5XGWnq7UWau69SggdYI%2Bn%2B1U7f29rVqp27t7V0RNKwQNKzIXodOf9/C8UOIGX%2B34/c//spG%2B9OP32dvE8G0oGe%2BE15BScR7%2B9u3iDut74x9/bSg0UdtyI9s99Ei7NHYQxtpEfNxare%2Bz96kgx6536z9nkbt7ZOa51O7Jfv5l7fdWokUtXTQ0JGijhC2fNA1U%2B2u0qlberu9K8%2BjdEr3nM5H6lHLBz1aLtbcz1vLRT0y5o1y1CGCvjLd7jiL9mrMd4//LOoZMaub9gfPc5PnkYgftNyNWfklP3dZb8Z16BATGv9Re6lXO54kVNCtp11v0Y7XQaigkyiRtD5OxWmo%2BKoRLugIUbeOGeVCBq0cdY%2BYVafzRun4Qn85aYtH4epHj5BRb9qEbnlJZ3ZMsx9fUcv1rTHtOnRy5Vp0zshpPSJkpZfznP116VlBh95yPDJiGzIiZFxjF/SmR9iErM826GPYm5otyZWAr7zU9th6rco%2B6KMrkdao/bd0xNzWtKscyZVpFkFppKW3i2bmuk4NGmiNoDvJTd/cz3ENQXd0%2Bn8neP%2Bu46OubXrQM/dbIxzjrY059yV6Fdtxzl7P6UEDLRH0ANtUrp3OqDf1uxx7LPbLlL/TobLdSJjQsCIT9Ow3E%2BpU3xwqTWcmNOzITGjkqU1pteORm9BsO/JUIlL4Mv8jTGhYkQuaKZ03e0qrTme5LQfKzYp61uOWkvlg5YgPWsqN%2BNDlUciKr6ZyW46N4slS1XtqRok5kZ3QCVO6Xstp/dIviurAkQ6aqK%2B7E3Zu4qvGLD%2BhN0zqe0rizkUcZSsoP6GZ0lqUp3Mi%2B6ZwT/0kriLCOoQIOolwMp1FOf9hgibqeaLEHGbLAZQKNaGZ0uNFms5hJ3S0kxxVxPMcbkJvIp7sSKKe37BBs/3oJ2rMYbcce5FPvqLo5zP0hGb70Vb0mC0mNFG34RBzEuK7HLX4MlM5l5A3FluOI7dF6sXxPFkGzRWQPMeYbbccR2xBnrmGbL3lYAvymHvMy0zovRWn9QohLzWh91Za3BXfS1hetivlPK1X%2B8XdLB30xinsVUMm6BMR41494j0mdOCwCflzBF1AaWoT8csI%2BoKRgRNwHYJu6E7ohNsGQcOK7ZeTsCaChhWChhWChhWChhWChhWChhWChhWChhWChhWChhWChhWChhWChhWChhWChhWChhWChpV/AQ0qPKPrJZbiAAAAAElFTkSuQmCC%22%2C%20%22sizes%22%3A%20%22180x180%22%2C%20%22type%22%3A%20%22image/png%22%7D%5D%7D">
+<title>Dieta del gato</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+/* Una columna de móvil: semana, día elegido, peso, ajustes. Azul = húmedo, ámbar = pienso. Los gramos se leen como la pantalla de una báscula. */
+:root{
+  --font-display:"Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-body:"Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --bg:#EDF0F3; --surface:#FFFFFF; --ink:#16202B; --muted:#586577; --line:#D8DEE5; --line-strong:#A9B4C1;
+  --wet:#0F5A9A; --wet-soft:#DDEBF8; --dry:#8A5300; --dry-soft:#F8EBD0;
+  --good:#1E7A4D; --on-good:#FFFFFF; --warn:#B3261E; --warn-soft:#FBE3E1; --good-soft:#DDF1E6;
+  --frank:#E8832A; --miko:#8C97A6;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F1620; --surface:#18222F; --ink:#E8EEF5; --muted:#9AA8B9; --line:#2A3645; --line-strong:#4A5A6E;
+    --wet:#79BBF5; --wet-soft:#16304A; --dry:#E8B755; --dry-soft:#3A2E12;
+    --good:#5CCB93; --on-good:#0B1A12; --warn:#FF9189; --warn-soft:#432220; --good-soft:#15362A;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F1620; --surface:#18222F; --ink:#E8EEF5; --muted:#9AA8B9; --line:#2A3645; --line-strong:#4A5A6E;
+  --wet:#79BBF5; --wet-soft:#16304A; --dry:#E8B755; --dry-soft:#3A2E12;
+  --good:#5CCB93; --on-good:#0B1A12; --warn:#FF9189; --warn-soft:#432220; --good-soft:#15362A;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.4;-webkit-text-size-adjust:100%;font-variant-numeric:tabular-nums}
+button,input{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--wet);outline-offset:2px}
+.app{max-width:480px;margin:0 auto;padding:20px 16px 56px;display:flex;flex-direction:column;gap:22px}
+.top{display:flex;flex-direction:column;gap:4px}
+.kicker{color:var(--muted);font-size:15px}
+h1{font-family:var(--font-display);font-weight:800;font-size:32px;letter-spacing:-.025em;line-height:1.05;margin:0;text-wrap:balance}
+.status{display:inline-flex;align-items:center;gap:6px;color:var(--muted);font-size:13px;margin-top:2px}
+.status i{width:8px;height:8px;border-radius:50%;background:var(--line-strong);display:inline-block}
+.status.ok i{background:var(--good)} .status.error i{background:var(--warn)} .status.saving i{background:var(--dry)}
+section{display:flex;flex-direction:column;gap:10px}
+h2{margin:0;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px}
+.row{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.navbtn{width:44px;height:44px;border-radius:12px;border:1px solid var(--line);background:var(--surface);font-size:22px;line-height:1;cursor:pointer}
+.weeklabel{font-weight:600;font-size:16px;text-align:center;flex:1}
+.strip{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.dcell{display:flex;flex-direction:column;align-items:center;gap:5px;padding:9px 0 8px;border-radius:12px;border:2px solid transparent;background:var(--surface);cursor:pointer;min-width:0}
+.dcell .l{font-size:12px;color:var(--muted);font-weight:600}
+.dcell .n{font-family:var(--font-mono);font-weight:600;font-size:17px}
+.dcell.today .n{text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:2px}
+.dcell.sel{border-color:var(--ink)}
+.bars{display:flex;gap:2px;width:70%}
+.bars i{flex:1;height:5px;border-radius:3px;background:var(--line)}
+.bars i.on{background:var(--good)}
+.dot{width:8px;height:8px;border-radius:50%}
+.dot.wet{background:var(--wet)} .dot.dry{background:var(--dry)}
+.legend{display:flex;gap:16px;color:var(--muted);font-size:13px;flex-wrap:wrap}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.dayhead{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+.dayhead h3{margin:0;font-size:22px;font-weight:800;letter-spacing:-.015em;text-transform:capitalize}
+.dayhead small{display:block;color:var(--muted);font-size:14px;font-weight:400;text-transform:none;letter-spacing:0}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:5px 11px;border-radius:999px;font-size:13px;font-weight:600}
+.pill.wet{background:var(--wet-soft);color:var(--wet)} .pill.dry{background:var(--dry-soft);color:var(--dry)}
+.pill.good{background:var(--good-soft);color:var(--good)} .pill.warn{background:var(--warn-soft);color:var(--warn)} .pill.plain{background:var(--bg);color:var(--muted)}
+.tomas{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.toma{display:grid;grid-template-columns:34px 1fr auto;align-items:center;gap:12px;width:100%;min-height:68px;padding:10px 14px 10px 12px;border:1px solid var(--line);border-left-width:6px;border-radius:14px;background:var(--surface);text-align:left;cursor:pointer}
+.toma.wet{border-left-color:var(--wet)} .toma.dry{border-left-color:var(--dry)}
+.chk{width:32px;height:32px;border-radius:50%;border:2px solid var(--line-strong);display:grid;place-items:center;color:var(--on-good)}
+.chk svg{opacity:0;width:18px;height:18px}
+.toma[aria-pressed="true"]{background:var(--bg)}
+.toma[aria-pressed="true"] .chk{background:var(--good);border-color:var(--good)}
+.toma[aria-pressed="true"] .chk svg{opacity:1}
+.toma[aria-pressed="true"] .who{color:var(--muted)}
+.who{display:flex;flex-direction:column;font-weight:600;font-size:17px}
+.who small{font-weight:400;color:var(--muted);font-size:13px}
+.amt{font-family:var(--font-mono);font-weight:600;font-size:22px;white-space:nowrap}
+.toma.wet .amt{color:var(--wet)} .toma.dry .amt{color:var(--dry)}
+.toma[aria-pressed="true"] .amt{opacity:.55}
+.sum{margin:14px 0 0;color:var(--muted);font-size:14px}
+.sum b{color:var(--ink);font-weight:600}
+.weekline{margin:0;color:var(--muted);font-size:14px}
+.weekline b{color:var(--ink);font-weight:600}
+.wform{display:flex;gap:8px}
+.wform input{flex:1;min-width:0;height:48px;border:1px solid var(--line-strong);border-radius:12px;background:var(--surface);padding:0 14px;font-family:var(--font-mono);font-size:20px;font-weight:600}
+.btn{height:48px;padding:0 18px;border-radius:12px;border:0;background:var(--ink);color:var(--bg);font-weight:600;font-size:16px;cursor:pointer}
+.msg{display:flex;gap:10px;align-items:flex-start;margin:12px 0 0;font-size:14px}
+.spark{display:block;width:100%;height:auto;margin-top:12px}
+.spark .grid{stroke:var(--line);stroke-width:1}
+.spark .area{fill:var(--wet-soft)}
+.spark .ln{fill:none;stroke:var(--wet);stroke-width:2.5;stroke-linejoin:round;stroke-linecap:round}
+.spark .pt{fill:var(--surface);stroke:var(--wet);stroke-width:2}
+.spark .end{fill:var(--wet);stroke:var(--surface);stroke-width:2}
+.spark text{fill:var(--muted);font-family:var(--font-mono);font-size:11px}
+.wlist{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column}
+.wlist li{display:grid;grid-template-columns:1fr auto auto auto;gap:12px;align-items:center;padding:9px 0;border-top:1px solid var(--line);font-size:15px}
+.wlist .kg{font-family:var(--font-mono);font-weight:600}
+.wlist .dl{font-family:var(--font-mono);font-size:14px;min-width:64px;text-align:right}
+.wlist .dl.dn{color:var(--good)} .wlist .dl.up{color:var(--warn)} .wlist .dl.na{color:var(--muted)}
+.xbtn{height:36px;min-width:36px;padding:0 8px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--muted);font-size:14px;cursor:pointer}
+.xbtn.sure{border-color:var(--warn);color:var(--warn);font-weight:600}
+details.card summary{font-weight:600;font-size:17px;cursor:pointer;min-height:28px}
+.set{display:flex;flex-direction:column;gap:16px;margin-top:14px}
+.set label.t{display:flex;flex-direction:column;gap:6px;font-size:14px;color:var(--muted)}
+.set input[type=number]{height:44px;border:1px solid var(--line-strong);border-radius:10px;background:var(--surface);padding:0 12px;font-family:var(--font-mono);font-size:18px;font-weight:600;width:120px}
+.set input[type=date]{height:44px;border:1px solid var(--line-strong);border-radius:10px;background:var(--surface);padding:0 12px;font-family:var(--font-mono);font-size:17px;font-weight:600;width:100%;max-width:220px}
+.set input[type=text]{height:44px;border:1px solid var(--line-strong);border-radius:10px;background:var(--surface);padding:0 12px;font-size:17px;width:100%}
+[hidden]{display:none!important}
+.sh{margin:6px 0 0;padding-top:16px;border-top:1px solid var(--line);font-size:17px;font-weight:800}
+.trbtns{display:flex;gap:8px;flex-wrap:wrap}
+.set textarea{width:100%;border:1px solid var(--line-strong);border-radius:10px;background:var(--surface);color:var(--ink);padding:10px;font-family:var(--font-mono);font-size:12px}
+.btn.ghost{background:var(--surface);color:var(--ink);border:1px solid var(--line-strong)}
+.btn:disabled{opacity:.45;cursor:default}
+.trbar{margin:12px 0 0;padding:10px 12px;border-radius:10px;background:var(--wet-soft);color:var(--wet);font-size:14px;font-weight:600}
+.trbar.done{background:var(--good-soft);color:var(--good)}
+.wdays{display:flex;gap:6px}
+.wdays label{flex:1;position:relative}
+.wdays input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
+.wdays span{display:grid;place-items:center;height:44px;border-radius:10px;border:1px solid var(--line-strong);font-weight:600;background:var(--surface)}
+.wdays input:checked + span{background:var(--wet-soft);border-color:var(--wet);color:var(--wet)}
+.wdays input:focus-visible + span{outline:3px solid var(--wet);outline-offset:2px}
+.hint{margin:0;color:var(--muted);font-size:13px}
+.note{color:var(--muted);font-size:13px;margin:0}
+.cats{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.catbtn{display:flex;align-items:center;gap:10px;min-height:62px;padding:10px 12px;border-radius:14px;border:2px solid var(--line);background:var(--surface);text-align:left;cursor:pointer;min-width:0}
+.catbtn[aria-pressed="true"]{border-color:var(--ink)}
+.catbtn .nm{display:block;font-weight:800;font-size:19px;line-height:1.1;letter-spacing:-.01em}
+.catbtn small{display:block;color:var(--muted);font-size:13px;font-weight:400}
+.cdot{width:34px;height:34px;border-radius:50%;flex:none;box-shadow:0 0 0 2px var(--line-strong);background-color:#fff}
+.cdot.frank{background-image:radial-gradient(circle at 30% 34%,var(--frank) 0 24%,transparent 25%),radial-gradient(circle at 72% 68%,var(--frank) 0 20%,transparent 21%),radial-gradient(circle at 70% 22%,var(--frank) 0 12%,transparent 13%)}
+.cdot.miko{background-image:radial-gradient(circle at 68% 32%,var(--miko) 0 24%,transparent 25%),radial-gradient(circle at 28% 70%,var(--miko) 0 20%,transparent 21%),radial-gradient(circle at 26% 24%,var(--miko) 0 12%,transparent 13%)}
+.both{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--muted);min-height:36px;margin-top:2px}
+.both input{width:22px;height:22px;margin:0}
+@media (prefers-reduced-motion:no-preference){
+  .toma,.dcell,.btn,.chk{transition:background-color .15s,border-color .15s}
+}
+</style>
+</head>
+<body>
+<main class="app">
+  <header class="top">
+    <div class="kicker" id="dateLine"></div>
+    <h1>Dieta del gato</h1>
+    <div class="status" id="status" role="status"><i></i><span>Cargando…</span></div>
+  </header>
+
+  <section aria-label="Gato">
+    <div class="cats" id="cats"></div>
+    <label class="both" for="both"><input type="checkbox" id="both">Marcar las tomas de los dos a la vez</label>
+  </section>
+
+  <section aria-labelledby="hSem">
+    <h2 id="hSem">Semana</h2>
+    <div class="row">
+      <button type="button" class="navbtn" data-shift="-7" aria-label="Semana anterior">‹</button>
+      <div class="weeklabel" id="weekLabel"></div>
+      <button type="button" class="navbtn" data-shift="7" aria-label="Semana siguiente">›</button>
+    </div>
+    <div class="strip" id="strip"></div>
+    <div class="legend"><span><i class="dot wet"></i>Con húmedo</span><span><i class="dot dry"></i>Solo pienso</span><span>Barras verdes: tomas hechas</span></div>
+  </section>
+
+  <section class="card" id="dayCard" aria-live="polite"></section>
+
+  <p class="weekline" id="weekLine"></p>
+
+  <section class="card" aria-labelledby="hPeso">
+    <h2 id="hPeso">Peso</h2>
+    <div class="wform" style="margin-top:10px">
+      <input id="kg" type="text" inputmode="decimal" autocomplete="off" placeholder="8,35" aria-label="Peso de hoy en kilos">
+      <button type="button" class="btn" id="saveKg">Guardar peso</button>
+    </div>
+    <div id="weightBox"></div>
+  </section>
+
+  <details class="card" id="settings">
+    <summary id="setSum">Ajustes del plan</summary>
+    <div class="set">
+      <div class="t" style="display:flex;flex-direction:column;gap:6px;font-size:14px;color:var(--muted)">
+        <span id="wdLabel">Días con húmedo</span>
+        <div class="wdays" role="group" aria-labelledby="wdLabel" id="wdays"></div>
+      </div>
+      <label class="t" for="setDry">Pienso al día (g)
+        <input id="setDry" type="number" min="10" max="300" step="1" inputmode="numeric">
+      </label>
+      <label class="t" for="setSwap">Pienso que sustituye a 1 sobre o lata pequeña (g)
+        <input id="setSwap" type="number" min="5" max="60" step="1" inputmode="numeric">
+      </label>
+      <label class="t" for="setFood">Nombre del pienso
+        <input id="setFood" type="text" maxlength="24" autocomplete="off">
+      </label>
+      <p class="hint" id="setHint"></p>
+
+      <p class="note">Si cambias de pienso, hazlo poco a poco durante 6 días: 25 %, 50 % y 75 % del nuevo, de dos en dos días, y después solo el nuevo. Las raciones de partida rondan las 215–240 kcal al día. Cualquier cambio de dieta, mejor con tu veterinario.</p>
+
+      <h3 class="sh">Copia de seguridad</h3>
+      <p class="hint">Tus datos solo viven en este móvil. Copia el texto y guárdalo en tus notas por si cambias de móvil o borras los datos del navegador. Para recuperarlos, pega el texto en la caja y pulsa Restaurar.</p>
+      <textarea id="bkText" rows="4" spellcheck="false" aria-label="Copia de seguridad de tus datos"></textarea>
+      <div class="trbtns">
+        <button type="button" class="btn ghost" id="bkCopy">Copiar mis datos</button>
+        <button type="button" class="btn ghost" id="bkRestore">Restaurar desde el texto</button>
+      </div>
+      <p class="hint" id="bkMsg" role="status"></p>
+    </div>
+  </details>
+</main>
+
+<script>
+(function(){
+'use strict';
+var KEY='dieta-gato-v1';
+var DAYS=['lunes','martes','miércoles','jueves','viernes','sábado','domingo'];
+var LET=['L','M','X','J','V','S','D'];
+var MON=['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
+var MONF=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+var TOMAS=['Mañana','Mediodía','Tarde','Noche'];
+var CATS=[{id:'frank',name:'Frank'},{id:'miko',name:'Miko'}];
+
+function pad(n){return String(n).padStart(2,'0');}
+function ymd(d){return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate());}
+function parse(s){var p=s.split('-').map(Number);return new Date(p[0],p[1]-1,p[2]);}
+function addDays(s,n){var d=parse(s);d.setDate(d.getDate()+n);return ymd(d);}
+function wd(s){return (parse(s).getDay()+6)%7;}
+function monday(s){return addDays(s,-wd(s));}
+function daysBetween(a,b){return Math.round((parse(b)-parse(a))/86400000);}
+function fmtKg(k){return String(Number(k.toFixed(2))).replace('.',',');}
+function longDate(s){var d=parse(s);return d.getDate()+' de '+MONF[d.getMonth()];}
+
+var today=ymd(new Date());
+var selected=today;
+var pendingDel=null;
+
+function defCat(w,food,dry,swap){
+  return {log:{},weights:[{d:today,kg:w}],set:{dry:dry,swap:swap,wetDays:[0,2,4],food:food}};
+}
+function defaults(){
+  return {v:4,cat:'frank',both:false,cats:{frank:defCat(8.35,'Metabolic',65,17),miko:defCat(7.45,'i/d',60,20)}};
+}
+function num(x,lo,hi,fb){x=Number(x);return (isFinite(x)&&x>=lo&&x<=hi)?x:fb;}
+function applySet(dst,o,onlyDays){
+  if(!o||typeof o!=='object')return;
+  if(!onlyDays){
+    dst.dry=Math.round(num(o.dry,10,300,dst.dry));
+    dst.swap=Math.round(num(o.swap,5,60,dst.swap));
+    if(typeof o.food==='string')dst.food=o.food.slice(0,24);
+  }
+  if(Array.isArray(o.wetDays)){
+    dst.wetDays=o.wetDays.map(Number).filter(function(x,i,a){return x>=0&&x<=6&&a.indexOf(x)===i;}).sort();
+  }
+}
+function cleanCat(c,def,base,onlyDays){
+  var out=def;
+  applySet(out.set,base,onlyDays);
+  if(!c||typeof c!=='object')return out;
+  if(c.log&&typeof c.log==='object'){
+    Object.keys(c.log).forEach(function(k){
+      var a=c.log[k];
+      if(/^\d{4}-\d{2}-\d{2}$/.test(k)&&Array.isArray(a)){
+        var r=[0,1,2,3].map(function(i){return !!a[i];});
+        if(r.some(Boolean))out.log[k]=r;
+      }
+    });
+  }
+  if(Array.isArray(c.weights)){
+    var m={};
+    c.weights.forEach(function(w){
+      if(w&&/^\d{4}-\d{2}-\d{2}$/.test(w.d)){var k=Number(w.kg);if(isFinite(k)&&k>=1&&k<=20)m[w.d]=k;}
+    });
+    var arr=Object.keys(m).sort().map(function(k){return {d:k,kg:m[k]};});
+    if(arr.length)out.weights=arr;
+  }
+  applySet(out.set,c.set,onlyDays);
+  return out;
+}
+function sanitize(o){
+  var d=defaults();
+  if(!o||typeof o!=='object')return d;
+  if(o.cat==='frank'||o.cat==='miko')d.cat=o.cat;
+  d.both=!!o.both;
+  var old=!(Number(o.v)>=4);
+  var src=(o.cats&&typeof o.cats==='object')?o.cats:{frank:{log:o.log,weights:o.weights},miko:null};
+  d.cats.frank=cleanCat(src.frank,d.cats.frank,o.settings,old);
+  d.cats.miko=cleanCat(src.miko,d.cats.miko,o.settings,false);
+  return d;
+}
+
+var state=defaults();
+try{var raw=localStorage.getItem(KEY);if(raw)state=sanitize(JSON.parse(raw));}catch(e){}
+
+var docRef=null,saveTimer=null;
+function setStatus(kind){
+  var el=document.getElementById('status');
+  var t={ok:'Guardado en tu cuenta',saving:'Guardando…',local:'Guardado en este móvil',error:'No se pudo guardar'}[kind]||'';
+  el.className='status '+kind;
+  el.querySelector('span').textContent=t;
+}
+function writeLocal(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){}}
+function queueSave(){
+  writeLocal();
+  if(!docRef)return;
+  setStatus('saving');
+  clearTimeout(saveTimer);
+  saveTimer=setTimeout(function(){
+    Promise.resolve(docRef.set({v:4,json:JSON.stringify(state)})).then(function(){setStatus('ok');},function(){setStatus('error');});
+  },500);
+}
+async function connect(){
+  try{
+    if(!window.claude||typeof window.claude.use!=='function'){setStatus('local');return;}
+    var db=await window.claude.use('db');
+    var user=await window.claude.use('user');
+    if(!db||!user||typeof user.id!=='function'){setStatus('local');return;}
+    var id=await user.id();
+    var ref=db.collection('data/users/'+id).doc('dieta');
+    var snap=await ref.get();
+    var data=null;
+    if(snap){data=(typeof snap.data==='function')?snap.data():snap.data;}
+    var has=!!(data&&typeof data.json==='string');
+    var old=false;
+    if(has){var parsed=JSON.parse(data.json);old=(parsed.v!==4);state=sanitize(parsed);writeLocal();syncSettings();render();}
+    docRef=ref;
+    setStatus('ok');
+    if(!has||old)queueSave();
+  }catch(e){setStatus('local');}
+}
+
+function cur(){return state.cats[state.cat];}
+function catName(){return state.cat==='frank'?'Frank':'Miko';}
+function getLog(s,c){return state.cats[c||state.cat].log[s]||[false,false,false,false];}
+function renderCats(){
+  document.getElementById('cats').innerHTML=CATS.map(function(c){
+    var n=getLog(today,c.id).filter(Boolean).length;
+    return '<button type="button" class="catbtn" data-cat="'+c.id+'" aria-pressed="'+(state.cat===c.id)+'"><span class="cdot '+c.id+'" aria-hidden="true"></span><span><span class="nm">'+c.name+'</span><small>hoy '+n+'/4 tomas</small></span></button>';
+  }).join('');
+}
+function planDay(s,c){
+  c=c||state.cat;
+  var st=state.cats[c].set,wet=st.wetDays.indexOf(wd(s))>=0;
+  if(wet){
+    var each=Math.round(Math.max(0,st.dry-st.swap)/2);
+    return {wet:true,dryTotal:each*2,pouches:1,tomas:[{k:'wet'},{k:'dry',g:each},{k:'dry',g:each},{k:'wet'}],food:st.food};
+  }
+  var e4=Math.round(st.dry/4);
+  return {wet:false,dryTotal:e4*4,pouches:0,tomas:[{k:'dry',g:e4},{k:'dry',g:e4},{k:'dry',g:e4},{k:'dry',g:e4}],food:st.food};
+}
+
+var CHECK='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
+
+function renderWeek(){
+  var mon=monday(selected),sun=addDays(mon,6),a=parse(mon),b=parse(sun);
+  document.getElementById('weekLabel').textContent=(a.getMonth()===b.getMonth())
+    ?a.getDate()+'–'+b.getDate()+' '+MON[b.getMonth()]
+    :a.getDate()+' '+MON[a.getMonth()]+' – '+b.getDate()+' '+MON[b.getMonth()];
+  var html='',dry=0,pouches=0,done=0;
+  for(var i=0;i<7;i++){
+    var s=addDays(mon,i),p=planDay(s),lg=getLog(s),n=lg.filter(Boolean).length;
+    dry+=p.dryTotal;pouches+=p.pouches;done+=n;
+    html+='<button type="button" class="dcell'+(s===selected?' sel':'')+(s===today?' today':'')+'" data-day="'+s+'" aria-pressed="'+(s===selected)+'" aria-label="'+DAYS[i]+' '+parse(s).getDate()+(p.wet?', con húmedo':', solo pienso')+', '+n+' de 4 tomas hechas">'
+      +'<span class="l">'+LET[i]+'</span><span class="n">'+parse(s).getDate()+'</span>'
+      +'<span class="bars">'+lg.map(function(x){return '<i class="'+(x?'on':'')+'"></i>';}).join('')+'</span>'
+      +'<span class="dot '+(p.wet?'wet':'dry')+'"></span></button>';
+  }
+  document.getElementById('strip').innerHTML=html;
+  document.getElementById('weekLine').innerHTML='Esta semana de '+catName()+': <b>'+dry+' g</b> de pienso y <b>'+pouches+(pouches===1?' sobre':' sobres')+'</b> · <b>'+done+' de 28</b> tomas hechas';
+}
+
+function renderDay(){
+  var p=planDay(selected),lg=getLog(selected),n=lg.filter(Boolean).length,i=wd(selected);
+  var title=(selected===today?'Hoy':DAYS[i]);
+  var rows=p.tomas.map(function(t,k){
+    var amt=t.k==='wet'?'½ sobre':t.g+' g';
+    var kind=t.k==='wet'?'Húmedo':'Pienso'+(p.food?' '+p.food:'');
+    return '<button type="button" class="toma '+t.k+'" data-toma="'+k+'" aria-pressed="'+lg[k]+'">'
+      +'<span class="chk">'+CHECK+'</span>'
+      +'<span class="who">'+TOMAS[k]+'<small>'+kind+'</small></span>'
+      +'<span class="amt">'+amt+'</span></button>';
+  }).join('');
+  var sum=p.wet
+    ?'Ración del día: <b>1 sobre</b> (en dos tomas) y <b>'+p.dryTotal+' g</b> de pienso.'
+    :'Ración del día: <b>'+p.dryTotal+' g</b> de pienso, sin húmedo.';
+  document.getElementById('dayCard').innerHTML=
+    '<div class="dayhead"><h3>'+title+'<small>'+(selected===today?DAYS[i]+' ':'')+longDate(selected)+' · '+catName()+'</small></h3>'
+    +'<span class="pill '+(p.wet?'wet':'dry')+'">'+(p.wet?'Día de húmedo':'Solo pienso')+' · '+n+'/4</span></div>'
+    +'<div class="tomas">'+rows+'</div><p class="sum">'+sum+'</p>';
+}
+
+function weightStatus(ws){
+  if(ws.length<2){
+    return {cls:'plain',txt:'Peso inicial',msg:'Pésalo una vez por semana, siempre a la misma hora, y apunta aquí el peso.'};
+  }
+  var a=ws[ws.length-2],b=ws[ws.length-1],days=Math.max(1,daysBetween(a.d,b.d));
+  if(days<5)return {cls:'plain',txt:'Pocos días',msg:'Pasaron '+days+(days===1?' día':' días')+' desde el peso anterior. Compara cuando pase una semana.'};
+  var g=(a.kg-b.kg)*1000/days*7;
+  var r=Math.round(g);
+  if(g<0)return {cls:'warn',txt:'Ha subido',msg:'Sube unos '+Math.abs(r)+' g por semana. Revisa premios y que su hermano no le quite ni le dé comida.'};
+  if(g>80)return {cls:'warn',txt:'Baja muy rápido',msg:'Pierde unos '+r+' g por semana. Sube un poco la ración: ir demasiado rápido es peligroso en gatos.'};
+  if(g>=40)return {cls:'good',txt:'Ritmo correcto',msg:'Pierde unos '+r+' g por semana. Sigue con el plan.'};
+  return {cls:'warn',txt:'Baja poco',msg:'Pierde unos '+r+' g por semana. Si lleva 2–3 semanas igual, reduce un 10 % el pienso.'};
+}
+
+function spark(ws){
+  if(ws.length<2)return '';
+  var W=300,H=96,px=16,pt=22,pb=14;
+  var t0=parse(ws[0].d).getTime(),t1=parse(ws[ws.length-1].d).getTime(),span=Math.max(1,t1-t0);
+  var lo=Math.min.apply(null,ws.map(function(w){return w.kg;})),hi=Math.max.apply(null,ws.map(function(w){return w.kg;}));
+  if(hi-lo<0.2){lo-=0.1;hi+=0.1;}
+  var pts=ws.map(function(w,i){
+    var x=ws.length===2?(i===0?px+10:W-px-10):px+10+(parse(w.d).getTime()-t0)/span*(W-2*px-20);
+    var y=pt+(hi-w.kg)/(hi-lo)*(H-pt-pb);
+    return {x:x,y:y,kg:w.kg};
+  });
+  var line=pts.map(function(p){return p.x.toFixed(1)+','+p.y.toFixed(1);}).join(' ');
+  var area=pts[0].x.toFixed(1)+','+(H-pb)+' '+line+' '+pts[pts.length-1].x.toFixed(1)+','+(H-pb);
+  var f=pts[0],l=pts[pts.length-1];
+  var circles=pts.slice(0,-1).map(function(p){return '<circle class="pt" cx="'+p.x.toFixed(1)+'" cy="'+p.y.toFixed(1)+'" r="3.5"/>';}).join('');
+  return '<svg class="spark" viewBox="0 0 '+W+' '+H+'" role="img" aria-label="Evolución del peso de '+fmtKg(f.kg)+' a '+fmtKg(l.kg)+' kilos">'
+    +'<line class="grid" x1="'+px+'" x2="'+(W-px)+'" y1="'+(H-pb)+'" y2="'+(H-pb)+'"/>'
+    +'<polygon class="area" points="'+area+'"/><polyline class="ln" points="'+line+'"/>'+circles
+    +'<circle class="end" cx="'+l.x.toFixed(1)+'" cy="'+l.y.toFixed(1)+'" r="5"/>'
+    +'<text x="'+f.x.toFixed(1)+'" y="'+(f.y-9).toFixed(1)+'" text-anchor="start">'+fmtKg(f.kg)+' kg</text>'
+    +'<text x="'+l.x.toFixed(1)+'" y="'+(l.y-10).toFixed(1)+'" text-anchor="end">'+fmtKg(l.kg)+' kg</text></svg>';
+}
+
+function renderWeight(){
+  document.getElementById('hPeso').textContent='Peso de '+catName();
+  var kgIn=document.getElementById('kg');
+  kgIn.setAttribute('aria-label','Peso de hoy de '+catName()+' en kilos');
+  kgIn.placeholder=state.cat==='frank'?'8,35':'7,45';
+  var ws=cur().weights.slice().sort(function(a,b){return a.d<b.d?-1:1;});
+  var st=weightStatus(ws),last=ws[ws.length-1];
+  var next=addDays(last.d,7),nd=parse(next);
+  var html='<p class="msg"><span class="pill '+st.cls+'">'+st.txt+'</span><span>'+st.msg+'</span></p>'
+    +'<p class="note" style="margin-top:8px">Próximo peso: '+DAYS[wd(next)]+' '+nd.getDate()+' de '+MONF[nd.getMonth()]+'.</p>'
+    +spark(ws);
+  var items=ws.slice(-8).reverse();
+  html+='<ul class="wlist">'+items.map(function(w){
+    var idx=ws.indexOf(w),prev=idx>0?ws[idx-1]:null,dl='<span class="dl na">inicio</span>';
+    if(prev){
+      var g=Math.round((w.kg-prev.kg)*1000);
+      dl='<span class="dl '+(g<0?'dn':(g>0?'up':'na'))+'">'+(g>0?'+':(g<0?'−':''))+Math.abs(g)+' g</span>';
+    }
+    var sure=(pendingDel===w.d);
+    return '<li><span>'+longDate(w.d)+'</span><span class="kg">'+fmtKg(w.kg)+' kg</span>'+dl
+      +'<button type="button" class="xbtn'+(sure?' sure':'')+'" data-del="'+w.d+'" aria-label="Quitar el peso del '+longDate(w.d)+'">'+(sure?'¿Quitar?':'×')+'</button></li>';
+  }).join('')+'</ul>';
+  document.getElementById('weightBox').innerHTML=html;
+}
+
+function render(){
+  var d=parse(today);
+  document.getElementById('dateLine').textContent=DAYS[wd(today)].charAt(0).toUpperCase()+DAYS[wd(today)].slice(1)+' '+d.getDate()+' de '+MONF[d.getMonth()];
+  renderCats();renderWeek();renderDay();renderWeight();
+}
+
+function buildWdays(){
+  document.getElementById('wdays').innerHTML=LET.map(function(l,i){
+    return '<label><input type="checkbox" id="wd'+i+'" data-wd="'+i+'" aria-label="'+DAYS[i]+'"><span>'+l+'</span></label>';
+  }).join('');
+}
+function updateHint(){
+  var st=cur().set,w=Math.max(0,st.dry-st.swap);
+  document.getElementById('setHint').textContent='Día de húmedo: 1 sobre + '+w+' g de pienso. Día solo pienso: '+st.dry+' g. Los días de húmedo son '+st.wetDays.length+' a la semana.';
+}
+function syncSettings(){
+  var st=cur().set;
+  for(var i=0;i<7;i++){var cb=document.getElementById('wd'+i);if(cb)cb.checked=st.wetDays.indexOf(i)>=0;}
+  document.getElementById('setDry').value=st.dry;
+  document.getElementById('setSwap').value=st.swap;
+  document.getElementById('setFood').value=st.food;
+  document.getElementById('both').checked=!!state.both;
+  document.getElementById('setSum').textContent='Ajustes de '+catName();
+  updateHint();
+}
+
+document.addEventListener('click',function(e){
+  var t=e.target.closest('[data-toma],[data-day],[data-shift],[data-del],[data-cat],#saveKg');
+  if(!t)return;
+  if(t.hasAttribute('data-toma')){
+    var k=Number(t.getAttribute('data-toma')),nv=!getLog(selected)[k];
+    var targets=state.both?['frank','miko']:[state.cat];
+    targets.forEach(function(c){
+      var L=state.cats[c].log,lg=getLog(selected,c).slice();
+      lg[k]=nv;
+      if(lg.some(Boolean))L[selected]=lg;else delete L[selected];
+    });
+    queueSave();renderCats();renderWeek();renderDay();
+  }else if(t.hasAttribute('data-day')){
+    selected=t.getAttribute('data-day');renderWeek();renderDay();
+  }else if(t.hasAttribute('data-shift')){
+    selected=addDays(selected,Number(t.getAttribute('data-shift')));renderWeek();renderDay();
+  }else if(t.hasAttribute('data-del')){
+    var d=t.getAttribute('data-del');
+    if(pendingDel===d){
+      var cc=cur();
+      if(cc.weights.length>1){cc.weights=cc.weights.filter(function(w){return w.d!==d;});queueSave();}
+      pendingDel=null;
+    }else{pendingDel=d;}
+    renderWeight();
+  }else if(t.hasAttribute('data-cat')){
+    state.cat=t.getAttribute('data-cat');pendingDel=null;queueSave();syncSettings();render();
+  }else if(t.id==='saveKg'){
+    var inp=document.getElementById('kg');
+    var v=parseFloat(String(inp.value).replace(',','.'));
+    if(!isFinite(v)||v<1||v>20){inp.setAttribute('aria-invalid','true');inp.value='';inp.placeholder='Ej. 8,2';inp.focus();return;}
+    inp.removeAttribute('aria-invalid');
+    var wc=cur();
+    wc.weights=wc.weights.filter(function(w){return w.d!==today;});
+    wc.weights.push({d:today,kg:Math.round(v*100)/100});
+    wc.weights.sort(function(a,b){return a.d<b.d?-1:1;});
+    inp.value='';pendingDel=null;
+    queueSave();renderWeight();
+  }
+});
+document.getElementById('kg').addEventListener('keydown',function(e){if(e.key==='Enter'){document.getElementById('saveKg').click();}});
+function refreshPlan(){updateHint();queueSave();renderWeek();renderDay();}
+document.getElementById('wdays').addEventListener('change',function(e){
+  var i=Number(e.target.getAttribute('data-wd')),st=cur().set;
+  var a=st.wetDays.filter(function(x){return x!==i;});
+  if(e.target.checked)a.push(i);
+  st.wetDays=a.sort();
+  refreshPlan();
+});
+document.getElementById('setDry').addEventListener('change',function(e){
+  var st=cur().set;st.dry=Math.round(num(e.target.value,10,300,st.dry));e.target.value=st.dry;refreshPlan();
+});
+document.getElementById('setSwap').addEventListener('change',function(e){
+  var st=cur().set;st.swap=Math.round(num(e.target.value,5,60,st.swap));e.target.value=st.swap;refreshPlan();
+});
+document.getElementById('setFood').addEventListener('change',function(e){
+  cur().set.food=e.target.value.trim().slice(0,24);e.target.value=cur().set.food;refreshPlan();
+});
+document.getElementById('both').addEventListener('change',function(e){state.both=e.target.checked;queueSave();});
+function bkSay(m){document.getElementById('bkMsg').textContent=m;}
+document.getElementById('bkCopy').addEventListener('click',function(){
+  var txt=JSON.stringify(state),ta=document.getElementById('bkText');
+  ta.value=txt;
+  function manual(){ta.focus();ta.select();bkSay('No se pudo copiar solo. Selecciona el texto de la caja y cópialo.');}
+  try{
+    navigator.clipboard.writeText(txt).then(function(){bkSay('Copiado. Pégalo en tus notas para guardarlo.');},manual);
+  }catch(e){manual();}
+});
+document.getElementById('bkRestore').addEventListener('click',function(){
+  try{
+    var o=JSON.parse(document.getElementById('bkText').value);
+    if(!o||typeof o!=='object'||!o.cats)throw new Error('formato');
+    state=sanitize(o);writeLocal();syncSettings();render();bkSay('Datos restaurados.');
+  }catch(e){bkSay('El texto no es una copia válida.');}
+});
+buildWdays();syncSettings();render();setStatus('local');
+connect();
+})();
+</script>
+</body>
+</html>
